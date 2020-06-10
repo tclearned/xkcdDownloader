@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        if(args.length < 2) {
+        if(args.length < 1) {
             System.err.println("Please provide at least one comic to download");
             System.exit(1);
         }
-        for(int i = 1; i < args.length; i++) {
+        for(int i = 0; i < args.length; i++) {
             int number = 0;
 
 
