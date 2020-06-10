@@ -10,14 +10,14 @@ public class Main {
             System.err.println("Please provide at least one comic to download");
             System.exit(1);
         }
-        for(int i = 0; i < args.length; i++) {
+        for (String arg : args) {
             int number = 0;
 
 
-            try(Scanner parser = new Scanner(args[i])) {
+            try (Scanner parser = new Scanner(arg)) {
                 number = parser.nextInt();
             } catch (Exception e) {
-                System.err.println(args[i] + " is not a number, please only input numbers as the argument");
+                System.err.println(arg + " is not a number, please only input numbers as the argument");
             }
 
             if (number == 0) {
@@ -31,7 +31,7 @@ public class Main {
                 continue;
             }
 
-            try(FileOutputStream fs = new FileOutputStream(number + ".png")) {
+            try (FileOutputStream fs = new FileOutputStream(number + ".png")) {
                 fs.write(image);
             } catch (IOException e) {
                 System.err.println("Failed to write file for comic " + number);
